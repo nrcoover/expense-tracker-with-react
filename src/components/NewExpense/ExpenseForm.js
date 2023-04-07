@@ -3,21 +3,38 @@ import React, { useState } from "react";
 import "./NewExpense.css";
 
 const ExpenseForm = () => {
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredAmount, setEnteredAmount] = useState('')
-  const [enteredDate, setEnteredDate] = useState('')
+  //   const [enteredTitle, setEnteredTitle] = useState('');
+  //   const [enteredAmount, setEnteredAmount] = useState('')
+  //   const [enteredDate, setEnteredDate] = useState('')
+  const [userInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate: "",
+  });
 
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
+    // set(event.target.value);
+    setUserInput({
+        ...userInput,
+        enteredTitle: event.target.value,
+    });
   };
 
   const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value)
-  }
+    // setEnteredAmount(event.target.value)
+    setUserInput({
+        ...userInput,
+        enteredAmount: event.target.value,
+    });
+  };
 
   const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value)
-  }
+    // setEnteredDate(event.target.value)
+    setUserInput({
+        ...userInput,
+        enteredDate: event.target.value,
+    });
+  };
 
   return (
     <form>
@@ -28,11 +45,21 @@ const ExpenseForm = () => {
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler} />
+          <input
+            type="number"
+            min="0.01"
+            step="0.01"
+            onChange={amountChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" min="2023-01-01" max="2027-12-31" onChange={dateChangeHandler} />
+          <input
+            type="date"
+            min="2023-01-01"
+            max="2027-12-31"
+            onChange={dateChangeHandler}
+          />
         </div>
         <div className="new-expense__actions">
           <button type="submit">Add Expense</button>
