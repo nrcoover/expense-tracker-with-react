@@ -35,7 +35,7 @@ const App = () => {
   // }
 
   const addExpenseItemHandler = (expenseItem) => {
-    console.log("App.js");
+    console.log("In App.js");
     console.log(expenseItem)
   }
 
