@@ -20,7 +20,8 @@ const ExpensesList = (props) => {
           selectedYear={filteredYear} 
           onChangeSelectedYear={changeOfSelectedYearHandler} />
         {props.items.map((expense) => ( 
-          <ExpenseItem 
+          <ExpenseItem
+            Key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date} 
