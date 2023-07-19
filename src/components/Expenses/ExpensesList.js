@@ -23,9 +23,8 @@ const ExpensesList = (props) => {
         <ExpenseFilter 
           selectedYear={filteredYear} 
           onChangeSelectedYear={changeOfSelectedYearHandler} />
-        {filteredExpenseItemsByYear.length === 0 ? (
-          <p>No expenses to display.</p> 
-        ) : (
+        {filteredExpenseItemsByYear.length === 0 && <p>No expenses to display.</p> }
+        {filteredExpenseItemsByYear.length > 0 && 
           filteredExpenseItemsByYear.map((expense) => (
             <ExpenseItem
               key={expense.id}
@@ -34,7 +33,7 @@ const ExpensesList = (props) => {
               date={expense.date} 
             />
           ))
-        )}
+        }
       </Card>
     </div>
   );
