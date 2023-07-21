@@ -91,6 +91,8 @@ const ExpenseForm = (props) => {
         enteredDate: "",
       }
     });
+    
+    setFormIsShowing(false);
   };
 
   if (!formIsShowing) {
@@ -98,7 +100,7 @@ const ExpenseForm = (props) => {
       <div className="new-expense__controls">
         <div className="new-expense__action-container">
           <div className="new-expense__actions">
-            <button onClick={registerExpenseButtonHandler}>Register Expense</button>
+            <button type="button" onClick={registerExpenseButtonHandler}>Register Expense</button>
           </div>
         </div>
       </div>
@@ -137,7 +139,7 @@ const ExpenseForm = (props) => {
         </div>
         <div className="new-expense__actions-container">
           <div className="new-expense__actions">
-            <button onClick={cancelButtonHandler}>Cancel</button>
+            <button type="button" onClick={cancelButtonHandler}>Cancel</button>
           </div>
           <div className="new-expense__actions">
             <button type="submit">Add Expense</button>
